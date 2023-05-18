@@ -1,0 +1,24 @@
+version: '3.8'
+services:
+  postgres:
+    image: postgres:13-alpine
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_HOST_AUTH_METHOD
+    env_file:
+      - .env
+    volumes:
+      - postgres:/var/lib/postgresql/data
+
+  kafka:
+    image: 'bitnami/kafka:latest'
+    network_mode: host
+    ports:
+      - '9092:9092'
+    environment:
+      - ALLOW_PLAINTEXT_LISTENER=yes
+
+volumes:
+   postgres:
+      name: nest-init-docker-db
