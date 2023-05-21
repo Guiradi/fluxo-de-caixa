@@ -1,0 +1,6 @@
+POSTGRES_HOST=postgres
+POSTGRES_DB=blaze
+POSTGRES_PORT=5432
+POSTGRES_USER=admin
+POSTGRES_PASSWORD=senha123
+BASE_BLAZE_URL=https://blaze.com/pt/sports?bt-path=
